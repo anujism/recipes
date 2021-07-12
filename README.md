@@ -20,4 +20,7 @@
 - Run `pytest`. It will run all the tests.
 
 ## Deploy on heroku
--
+- Add git remote for your heroku app.
+- Make changes.
+- git push heroku master.
+- TODO: we can later connect it with github repo and make automatic deployments
