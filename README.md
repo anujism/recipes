@@ -18,4 +18,4 @@
 - Run `pytest`. It will run all the tests.
 
 ## Deploy on heroku
-- 
+-

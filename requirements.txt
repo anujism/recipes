@@ -1,2 +1,6 @@
 django==3.2.5
 measurement==3.2.0
+# for production - in real world we can have separate files for each env
+psycopg2-binary==2.9.1
+django-environ==0.4.5
+django-heroku==0.3.1
