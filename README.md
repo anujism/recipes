@@ -9,7 +9,9 @@
 ## Local Setup
 - Create virtualenv.
 - Install requirements - `pip install -r requirements-dev.txt`.
+- Copy recipes/.env.template to recipes/.env. (Adjust env variables as necessary).
 - Run `python manage.py runserver 0:8080`. Open your browser at http://localhost:8080.
+- Run `python.manage.py migrate` to migrate all migrations.
 - Create superuser - `python manage.py createsuperuser`.
 - Login using superuser credentials at http://localhost:8080.
 - Create more staff users as required.

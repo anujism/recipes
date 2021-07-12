@@ -4,3 +4,4 @@ measurement==3.2.0
 psycopg2-binary==2.9.1
 django-environ==0.4.5
 django-heroku==0.3.1
+gunicorn==20.1.0
