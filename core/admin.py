@@ -4,14 +4,9 @@ from django.db.models import Prefetch
 from core.models import Ingredient, Recipe, RecipeIngredient
 
 
-class CustomModelAdmin(admin.ModelAdmin):
-    def __init__(self, model, admin_site):
-        self.list_display = [field.name for field in model._meta.fields if field.name != "id"]
-        super(CustomModelAdmin, self).__init__(model, admin_site)
-
-
 @admin.register(Ingredient)
-class IngredientAdmin(CustomModelAdmin):
+class IngredientAdmin(admin.ModelAdmin):
+    list_display = ("article_number", "name", "quantity", "unit", "cost")
     search_fields = ("name", "article_number")
 
 
