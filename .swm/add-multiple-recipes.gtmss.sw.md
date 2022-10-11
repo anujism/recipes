@@ -2,7 +2,7 @@
 id: gtmss
 name: Add multiple recipes
 file_version: 1.0.2
-app_version: 0.9.6-1
+app_version: 0.9.7-1
 file_blobs:
   core/views.py: 9db81c9f99aba077a980d2eb25196aee66ad73e0
   core/tests.py: 7ce9bf424ccc5e8a5b1ee336e106e8f3ace3adb8
@@ -29,6 +29,8 @@ kya change test karenge??
 
 
 <br/>
+
+
 
 <!-- NOTE-swimm-snippet: the lines below link your snippet to Swimm -->
 ### 📄 core/views.py
@@ -68,6 +70,18 @@ we need to modify it to test 1000 cost.
 ⬜ 21     
 ⬜ 22     class TestRecipe:
 ```
+
+<br/>
+
+testing something why
+
+
+
+
+can multiple people edit this code???
+
+
+
 
 <br/>
 
