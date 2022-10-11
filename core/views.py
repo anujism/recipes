@@ -18,4 +18,5 @@ def units_by_ingredient(request, ingredient_id=None):
     unit_choices = get_unit_choices(supporting_measures=[ingredient.measure_obj])
     return JsonResponse({
         "unit_choices": list(unit_choices),
+        "i": ingredient.id,
     })
