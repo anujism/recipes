@@ -4,7 +4,7 @@ name: Add multiple recipes
 file_version: 1.0.2
 app_version: 0.9.7-1
 file_blobs:
-  core/views.py: 9db81c9f99aba077a980d2eb25196aee66ad73e0
+  core/views.py: 16d1c4785170c81d2f2adbe4660db22674630ef1
   core/tests.py: 7ce9bf424ccc5e8a5b1ee336e106e8f3ace3adb8
 ---
 
@@ -25,27 +25,49 @@ kya change test karenge??
 
 [https://github.com/facebook/lexical/blob/main/packages/lexical-markdown/src/index.ts#L68-L79](https://github.com/facebook/lexical/blob/main/packages/lexical-markdown/src/index.ts#L68-L79)
 
+Code 1 -- doc 1
+
+Code 2 -- doc 1 --- doc1 is out of sync
+
+*   no need to change doc
+    
+*   need to change doc
+    
 
 
+
+
+Code 1 - doc 1
+
+Code 1 - doc 2 -- code is out of sync
+
+
+
+
+Code 1 - doc1
+
+Code 2 - doc1 (Mark not out of sync) - we will not inform/show that this code is out of sync
+
+Code 2 - opt out of sync notification
 
 <br/>
 
-
-
+in this view/function, we have to pass another field (ingredient id as `i`) in response. right now it's not being passed.
 <!-- NOTE-swimm-snippet: the lines below link your snippet to Swimm -->
 ### 📄 core/views.py
 ```python
-⬜ 5      
-⬜ 6      
-⬜ 7      @staff_member_required
-🟩 8      def units_by_ingredient(request, ingredient_id=None):
-🟩 9          # TODO: handle wrong ingredient_id
-🟩 10         ingredient = Ingredient.objects.get(id=ingredient_id)
-🟩 11         unit_choices = get_unit_choices(supporting_measures=[ingredient.measure_obj])
-🟩 12         return JsonResponse({
-🟩 13             "unit_choices": list(unit_choices),
-🟩 14         })
-🟩 15     
+⬜ 12     
+⬜ 13     
+⬜ 14     @staff_member_required
+🟩 15     def units_by_ingredient(request, ingredient_id=None):
+🟩 16         # TODO: handle wrong ingredient_id
+🟩 17         ingredient = Ingredient.objects.get(id=ingredient_id)
+🟩 18         unit_choices = get_unit_choices(supporting_measures=[ingredient.measure_obj])
+🟩 19         return JsonResponse({
+🟩 20             "unit_choices": list(unit_choices),
+🟩 21             "i": ingredient.id,
+🟩 22         })
+🟩 23     
 ```
 
 <br/>
