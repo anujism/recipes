@@ -2,10 +2,13 @@
 id: gtmss
 name: Add multiple recipes
 file_version: 1.0.2
-app_version: 0.9.7-1
+app_version: 0.9.9-6
 file_blobs:
-  core/views.py: 16d1c4785170c81d2f2adbe4660db22674630ef1
+  core/views.py: 9db81c9f99aba077a980d2eb25196aee66ad73e0
   core/tests.py: 7ce9bf424ccc5e8a5b1ee336e106e8f3ace3adb8
+cross_repo_file_blobs:
+  Z2l0aHViJTNBJTNBcnRkLXRlc3QlM0ElM0Fhc2h2aW4tc2hhcm1h:
+    lumache.py: 3ea7ce95c0a3d517b41db15542a89f107757e334
 ---
 
 **This is a new editor**
@@ -56,18 +59,17 @@ in this view/function, we have to pass another field (ingredient id as `i`) in r
 <!-- NOTE-swimm-snippet: the lines below link your snippet to Swimm -->
 ### 📄 core/views.py
 ```python
-⬜ 12     
-⬜ 13     
-⬜ 14     @staff_member_required
-🟩 15     def units_by_ingredient(request, ingredient_id=None):
-🟩 16         # TODO: handle wrong ingredient_id
-🟩 17         ingredient = Ingredient.objects.get(id=ingredient_id)
-🟩 18         unit_choices = get_unit_choices(supporting_measures=[ingredient.measure_obj])
-🟩 19         return JsonResponse({
-🟩 20             "unit_choices": list(unit_choices),
-🟩 21             "i": ingredient.id,
-🟩 22         })
-🟩 23     
+⬜ 5      
+⬜ 6      
+⬜ 7      @staff_member_required
+🟩 8      def units_by_ingredient(request, ingredient_id=None):
+🟩 9          # TODO: handle wrong ingredient_id
+🟩 10         ingredient = Ingredient.objects.get(id=ingredient_id)
+🟩 11         unit_choices = get_unit_choices(supporting_measures=[ingredient.measure_obj])
+🟩 12         return JsonResponse({
+🟩 13             "unit_choices": list(unit_choices),
+🟩 14         })
+🟩 15     
 ```
 
 <br/>
@@ -104,6 +106,30 @@ can multiple people edit this code???
 
 
 
+
+<br/>
+
+giuiuhoihhh iohihihiohoih iohiuhih
+<!-- NOTE-swimm-snippet: the lines below link your snippet to Swimm -->
+<!-- NOTE-swimm-repo ::Z2l0aHViJTNBJTNBcnRkLXRlc3QlM0ElM0Fhc2h2aW4tc2hhcm1h:: -->
+### 📄 lumache.py
+```python
+⬜ 10         pass
+⬜ 11     
+⬜ 12     
+🟩 13     def get_random_ingredients(kind=None):
+🟩 14         """
+🟩 15         Return a list of random ingredients as strings.
+🟩 16     
+🟩 17         :param kind: Optional "kind" of ingredients.
+🟩 18         :type kind: list[str] or None
+🟩 19         :raise lumache.InvalidKindError: If the kind is invalid.
+🟩 20         :return: The ingredients list.
+🟩 21         :rtype: list[str]
+🟩 22         """
+🟩 23         return ["shells", "gorgonzola", "parsley"]
+🟩 24     
+```
 
 <br/>
 
