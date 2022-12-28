@@ -6,7 +6,7 @@ app_version: 0.11.0
 file_blobs:
   core/views.py: 9db81c9f99aba077a980d2eb25196aee66ad73e0
   core/tests.py: 7ce9bf424ccc5e8a5b1ee336e106e8f3ace3adb8
-  core/factories.py: a4d90edf6f3259f89a459dc400ea9afda2f767a1
+  core/factories.py: 8d31c509b786ad8cbf12a562d7aedc723f660b9e
 cross_repo_file_blobs:
   Z2l0aHViJTNBJTNBcnRkLXRlc3QlM0ElM0Fhc2h2aW4tc2hhcm1h:
     lumache.py: 587fcfbfa64c1ae931ecafa52d1940c936800cae
@@ -126,7 +126,8 @@ something needs to be written
 ```python
 🟩 6      class IngredientFactory(factory.django.DjangoModelFactory):
 🟩 7          name = factory.Sequence(lambda n: f"Ingredient {n}")
-🟩 8          article_number = factory.Sequence(lambda n: f"Ingredient Number {n}")
+🟩 8          some_other_field = 10
+🟩 9          article_number = factory.Sequence(lambda n: f"Ingredient Number {n}")
 ```
 
 <br/>
