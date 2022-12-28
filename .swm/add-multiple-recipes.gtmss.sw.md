@@ -1,14 +1,14 @@
 ---
 id: gtmss
 name: Add multiple recipes
-file_version: 1.0.2
-app_version: 0.9.9-6
+file_version: 1.1.0
+app_version: 0.11.0
 file_blobs:
   core/views.py: 9db81c9f99aba077a980d2eb25196aee66ad73e0
   core/tests.py: 7ce9bf424ccc5e8a5b1ee336e106e8f3ace3adb8
 cross_repo_file_blobs:
   Z2l0aHViJTNBJTNBcnRkLXRlc3QlM0ElM0Fhc2h2aW4tc2hhcm1h:
-    lumache.py: 3ea7ce95c0a3d517b41db15542a89f107757e334
+    lumache.py: 587fcfbfa64c1ae931ecafa52d1940c936800cae
 ---
 
 **This is a new editor**
@@ -23,9 +23,6 @@ Kaise karna hai ?? `📄 core/models.py`
 
 kya change test karenge??
 
-
-
-
 [https://github.com/facebook/lexical/blob/main/packages/lexical-markdown/src/index.ts#L68-L79](https://github.com/facebook/lexical/blob/main/packages/lexical-markdown/src/index.ts#L68-L79)
 
 Code 1 -- doc 1
@@ -37,15 +34,9 @@ Code 2 -- doc 1 --- doc1 is out of sync
 *   need to change doc
     
 
-
-
-
 Code 1 - doc 1
 
 Code 1 - doc 2 -- code is out of sync
-
-
-
 
 Code 1 - doc1
 
@@ -99,13 +90,7 @@ we need to modify it to test 1000 cost.
 
 testing something why
 
-
-
-
 can multiple people edit this code???
-
-
-
 
 <br/>
 
@@ -114,9 +99,6 @@ giuiuhoihhh iohihihiohoih iohiuhih
 <!-- NOTE-swimm-repo ::Z2l0aHViJTNBJTNBcnRkLXRlc3QlM0ElM0Fhc2h2aW4tc2hhcm1h:: -->
 ### 📄 lumache.py
 ```python
-⬜ 10         pass
-⬜ 11     
-⬜ 12     
 🟩 13     def get_random_ingredients(kind=None):
 🟩 14         """
 🟩 15         Return a list of random ingredients as strings.
@@ -126,9 +108,9 @@ giuiuhoihhh iohihihiohoih iohiuhih
 🟩 19         :raise lumache.InvalidKindError: If the kind is invalid.
 🟩 20         :return: The ingredients list.
 🟩 21         :rtype: list[str]
-🟩 22         """
-🟩 23         return ["shells", "gorgonzola", "parsley"]
-🟩 24     
+🟩 22         sth else
+🟩 23         """
+🟩 24         return ["shells", "gorgonzola", "parsley"]
 ```
 
 <br/>
