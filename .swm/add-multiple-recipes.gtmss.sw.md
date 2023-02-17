@@ -1,8 +1,8 @@
 ---
 id: gtmss
 title: Add multiple recipes
-file_version: 1.1.1
-app_version: 1.1.5
+file_version: 1.1.2
+app_version: 1.2.4
 ---
 
 **This is a new editor**
@@ -119,8 +119,6 @@ something needs to be written
 
 <br/>
 
-<br/>
-
 <!--MERMAID {width:100}-->
 ```mermaid
 graph TD
@@ -131,6 +129,25 @@ C -->|Fruits| E[iPhone]
 C -->|Three| F[fa:fa-car Car]
 ```
 <!--MCONTENT {content: "graph TD<br/>\nA\\[Recipe\\] \\-\\-\\>|Ingredients| B(Go shopping)<br/>\nB \\-\\-\\> C{Let me think}<br/>\nC \\-\\-\\>|Vegetables| D\\[Laptop\\]<br/>\nC \\-\\-\\>|Fruits| E\\[iPhone\\]<br/>\nC \\-\\-\\>|Three| F\\[fa:fa-car Car\\]<br/>"} --->
+
+<br/>
+
+<br/>
+
+<br/>
+
+this looks cool
+<!-- NOTE-swimm-snippet: the lines below link your snippet to Swimm -->
+<!-- NOTE-swimm-repo ::Z2l0aHViJTNBJTNBcnRkLXRlc3QlM0ElM0Fhc2h2aW4tc2hhcm1h:: -->
+### 📄 README.rst
+```restructuredtext
+4      This GitHub template includes fictional Python library
+5      with some basic Sphinx docs.
+6      
+7      Read the tutorial here:
+8      
+9      https://docs.readthedocs.io/en/stable/tutorial/
+```
 
 <br/>
 
