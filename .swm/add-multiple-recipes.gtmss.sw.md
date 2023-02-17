@@ -7,6 +7,29 @@ app_version: 1.2.4
 
 **This is a new editor**
 
+<br/>
+
+
+<!-- NOTE-swimm-snippet: the lines below link your snippet to Swimm -->
+<!-- NOTE-swimm-repo ::Z2l0aHViJTNBJTNBcnRkLXRlc3QlM0ElM0Fhc2h2aW4tc2hhcm1h:: -->
+### 📄 lumache.py
+```python
+13     def get_random_ingredients(kind=None):
+14         """
+15         Return a list of random ingredients as strings.
+16     
+17         :param kind: Optional "kind" of ingredients.
+18         :type kind: list[str] or None
+19         :raise lumache.InvalidKindError: If the kind is invalid.
+20         :return: The ingredients list.
+21         :rtype: list[str]
+22         sth else
+23         """
+24         return ["shells", "gorgonzola", "parsley"]
+```
+
+<br/>
+
 Trying again
 
 adding more lines
@@ -144,9 +167,11 @@ this looks cool
 4      This GitHub template includes fictional Python library
 5      with some basic Sphinx docs.
 6      
-7      Read the tutorial here:
+7      This repo serves a good starting point.
 8      
-9      https://docs.readthedocs.io/en/stable/tutorial/
+9      Read the tutorial here:
+10     
+11     https://docs.readthedocs.io/en/stable/tutorial/
 ```
 
 <br/>
