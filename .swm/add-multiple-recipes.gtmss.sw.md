@@ -1,18 +1,34 @@
 ---
 id: gtmss
-name: Add multiple recipes
-file_version: 1.1.0
-app_version: 0.11.0
-file_blobs:
-  core/views.py: 9db81c9f99aba077a980d2eb25196aee66ad73e0
-  core/tests.py: 7ce9bf424ccc5e8a5b1ee336e106e8f3ace3adb8
-  core/factories.py: a4d90edf6f3259f89a459dc400ea9afda2f767a1
-cross_repo_file_blobs:
-  Z2l0aHViJTNBJTNBcnRkLXRlc3QlM0ElM0Fhc2h2aW4tc2hhcm1h:
-    lumache.py: 587fcfbfa64c1ae931ecafa52d1940c936800cae
+title: Add multiple recipes
+file_version: 1.1.2
+app_version: 1.2.4
 ---
 
 **This is a new editor**
+
+<br/>
+
+
+<!-- NOTE-swimm-snippet: the lines below link your snippet to Swimm -->
+<!-- NOTE-swimm-repo ::Z2l0aHViJTNBJTNBcnRkLXRlc3QlM0ElM0Fhc2h2aW4tc2hhcm1h:: -->
+### 📄 lumache.py
+```python
+13     def get_random_ingredients(kind=None):
+14         """
+15         Return a list of random ingredients as strings.
+16     
+17         :param kind: Optional "kind" of ingredients.
+18         :type kind: list[str] or None
+19         :raise lumache.InvalidKindError: If the kind is invalid.
+20         :return: The ingredients list.
+21         :rtype: list[str]
+22         sth else
+23         """
+24         return ["shells", "gorgonzola", "parsley"]
+```
+
+<br/>
 
 Trying again
 
@@ -51,17 +67,14 @@ in this view/function, we have to pass another field (ingredient id as `i`) in r
 <!-- NOTE-swimm-snippet: the lines below link your snippet to Swimm -->
 ### 📄 core/views.py
 ```python
-⬜ 5      
-⬜ 6      
-⬜ 7      @staff_member_required
-🟩 8      def units_by_ingredient(request, ingredient_id=None):
-🟩 9          # TODO: handle wrong ingredient_id
-🟩 10         ingredient = Ingredient.objects.get(id=ingredient_id)
-🟩 11         unit_choices = get_unit_choices(supporting_measures=[ingredient.measure_obj])
-🟩 12         return JsonResponse({
-🟩 13             "unit_choices": list(unit_choices),
-🟩 14         })
-🟩 15     
+8      def units_by_ingredient(request, ingredient_id=None):
+9          # TODO: handle wrong ingredient_id
+10         ingredient = Ingredient.objects.get(id=ingredient_id)
+11         unit_choices = get_unit_choices(supporting_measures=[ingredient.measure_obj])
+12         return JsonResponse({
+13             "unit_choices": list(unit_choices),
+14         })
+15     
 ```
 
 <br/>
@@ -70,21 +83,15 @@ we need to modify it to test 1000 cost.
 <!-- NOTE-swimm-snippet: the lines below link your snippet to Swimm -->
 ### 📄 core/tests.py
 ```python
-⬜ 8      
-⬜ 9      class TestIngredient:
-⬜ 10         @pytest.mark.django_db
-🟩 11         def test_ingredient_properties(self):
-🟩 12             # 1 kg of ingredient1 cost 100 euros
-🟩 13             ingredient_1 = IngredientFactory(cost=1000, unit="kg", quantity=1)
-🟩 14             # 1 litre of ingredient2 cost 10 euros
-🟩 15             ingredient_2 = IngredientFactory(cost=10, unit="l", quantity=1)
-🟩 16             assert ingredient_1.quantity_in_si_unit == Decimal(10000)
-🟩 17             assert ingredient_2.quantity_in_si_unit == Decimal(1)
-🟩 18             assert ingredient_1.cost_per_si_unit == Decimal('0.1')
-🟩 19             assert ingredient_2.cost_per_si_unit == Decimal(10)
-⬜ 20     
-⬜ 21     
-⬜ 22     class TestRecipe:
+11         def test_ingredient_properties(self):
+12             # 1 kg of ingredient1 cost 100 euros
+13             ingredient_1 = IngredientFactory(cost=1000, unit="kg", quantity=1)
+14             # 1 litre of ingredient2 cost 10 euros
+15             ingredient_2 = IngredientFactory(cost=10, unit="l", quantity=1)
+16             assert ingredient_1.quantity_in_si_unit == Decimal(10000)
+17             assert ingredient_2.quantity_in_si_unit == Decimal(1)
+18             assert ingredient_1.cost_per_si_unit == Decimal('0.1')
+19             assert ingredient_2.cost_per_si_unit == Decimal(10)
 ```
 
 <br/>
@@ -100,18 +107,18 @@ giuiuhoihhh iohihihiohoih iohiuhih
 <!-- NOTE-swimm-repo ::Z2l0aHViJTNBJTNBcnRkLXRlc3QlM0ElM0Fhc2h2aW4tc2hhcm1h:: -->
 ### 📄 lumache.py
 ```python
-🟩 13     def get_random_ingredients(kind=None):
-🟩 14         """
-🟩 15         Return a list of random ingredients as strings.
-🟩 16     
-🟩 17         :param kind: Optional "kind" of ingredients.
-🟩 18         :type kind: list[str] or None
-🟩 19         :raise lumache.InvalidKindError: If the kind is invalid.
-🟩 20         :return: The ingredients list.
-🟩 21         :rtype: list[str]
-🟩 22         sth else
-🟩 23         """
-🟩 24         return ["shells", "gorgonzola", "parsley"]
+13     def get_random_ingredients(kind=None):
+14         """
+15         Return a list of random ingredients as strings.
+16     
+17         :param kind: Optional "kind" of ingredients.
+18         :type kind: list[str] or None
+19         :raise lumache.InvalidKindError: If the kind is invalid.
+20         :return: The ingredients list.
+21         :rtype: list[str]
+22         sth else
+23         """
+24         return ["shells", "gorgonzola", "parsley"]
 ```
 
 <br/>
@@ -124,14 +131,48 @@ something needs to be written
 <!-- NOTE-swimm-snippet: the lines below link your snippet to Swimm -->
 ### 📄 core/factories.py
 ```python
-🟩 6      class IngredientFactory(factory.django.DjangoModelFactory):
-🟩 7          name = factory.Sequence(lambda n: f"Ingredient {n}")
-🟩 8          article_number = factory.Sequence(lambda n: f"Ingredient Number {n}")
+6      class IngredientFactory(factory.django.DjangoModelFactory):
+7          name = factory.Sequence(lambda n: f"Ingredient {n}")
+8          article_number = factory.Sequence(lambda n: f"Ingredient Number {n}")
 ```
 
 <br/>
 
 <br/>
+
+<br/>
+
+<!--MERMAID {width:100}-->
+```mermaid
+graph TD
+A[Recipe] -->|Ingredients| B(Go shopping)
+B --> C{Let me think}
+C -->|Vegetables| D[Laptop]
+C -->|Fruits| E[iPhone]
+C -->|Three| F[fa:fa-car Car]
+```
+<!--MCONTENT {content: "graph TD<br/>\nA\\[Recipe\\] \\-\\-\\>|Ingredients| B(Go shopping)<br/>\nB \\-\\-\\> C{Let me think}<br/>\nC \\-\\-\\>|Vegetables| D\\[Laptop\\]<br/>\nC \\-\\-\\>|Fruits| E\\[iPhone\\]<br/>\nC \\-\\-\\>|Three| F\\[fa:fa-car Car\\]<br/>"} --->
+
+<br/>
+
+<br/>
+
+<br/>
+
+this looks cool
+<!-- NOTE-swimm-snippet: the lines below link your snippet to Swimm -->
+<!-- NOTE-swimm-repo ::Z2l0aHViJTNBJTNBcnRkLXRlc3QlM0ElM0Fhc2h2aW4tc2hhcm1h:: -->
+### 📄 README.rst
+```restructuredtext
+4      This GitHub template includes fictional Python library
+5      with some basic Sphinx docs.
+6      
+7      This repo serves a good starting point.
+8      
+9      Read the tutorial here:
+10     
+11     https://docs.readthedocs.io/en/stable/tutorial/
+```
 
 <br/>
 
